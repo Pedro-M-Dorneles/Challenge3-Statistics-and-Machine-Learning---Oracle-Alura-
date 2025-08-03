@@ -24,3 +24,61 @@ After completing the exploratory data analysis, this second part of the project 
 - imbalanced-learn (SMOTE)
 - Yellowbrick
 - Jupyter Notebook
+
+## 🧠 Machine Learning Approach
+
+### Data Preparation
+- Null values were handled using the mean for numerical columns.
+- Binary categorical variables were encoded manually.
+- Multi-class categorical features were encoded using OneHotEncoder.
+- A `MinMaxScaler` was used to normalize numerical values.
+- Two new features were engineered to represent whether the customer had internet or phone service.
+
+### Class Balancing
+- SMOTE (Synthetic Minority Oversampling Technique) was applied to the training set to balance the target classes and reduce bias toward the majority class.
+
+### Models Tested
+
+#### K-Nearest Neighbors (KNN)
+- Parameter tuning performed via `GridSearchCV`.
+- Results showed limited recall and F1 Score, making it less suitable for the churn problem.
+
+#### Random Forest Classifier 🌳
+- Outperformed KNN in all metrics.
+- Feature importance analysis helped reduce dimensionality to the top 17 variables.
+- Hyperparameter tuning (e.g., depth, number of trees, class weights) was done to improve recall.
+- Final model achieved strong recall and balanced performance.
+
+## 📈 Model Performance (Random Forest)
+
+| Metric     | Value    |
+|------------|----------|
+| Accuracy   | ~80%     |
+| Precision  | ~66%     |
+| Recall     | ~72%     |
+| F1 Score   | ~69%     |
+
+## 💡 Key Insights
+
+The most influential features in predicting churn were:
+
+- Contract type (month-to-month customers are more likely to churn)
+- Tenure (new customers are more likely to leave)
+- Monthly charges (higher values increase churn risk)
+- Lack of services such as OnlineSecurity and TechSupport
+- Use of paperless billing
+
+These insights can guide strategic actions such as:
+
+- Offering loyalty benefits to new or monthly contract customers
+- Creating flexible plans with lower monthly charges
+- Bundling high-retention services in promotional packages
+- Improving customer onboarding and early support
+
+## 🧪 How to Run the Project
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/telecom-churn-prediction.git
+cd telecom-churn-prediction
