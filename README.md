@@ -58,27 +58,3 @@ After completing the exploratory data analysis, this second part of the project 
 | Recall     | ~72%     |
 | F1 Score   | ~69%     |
 
-## 💡 Key Insights
-
-The most influential features in predicting churn were:
-
-- Contract type (month-to-month customers are more likely to churn)
-- Tenure (new customers are more likely to leave)
-- Monthly charges (higher values increase churn risk)
-- Lack of services such as OnlineSecurity and TechSupport
-- Use of paperless billing
-
-These insights can guide strategic actions such as:
-
-- Offering loyalty benefits to new or monthly contract customers
-- Creating flexible plans with lower monthly charges
-- Bundling high-retention services in promotional packages
-- Improving customer onboarding and early support
-
-## 🧪 How to Run the Project
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/your-username/telecom-churn-prediction.git
-cd telecom-churn-prediction
